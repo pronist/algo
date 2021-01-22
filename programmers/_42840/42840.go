@@ -22,7 +22,7 @@ func (p *P) Resolve(answer int) {
 	p.i++
 }
 
-func Biggest(counts []int) []int {
+func biggest(counts []int) []int {
 	max := math.MinInt8
 	biggest := make([]int, 0)
 
@@ -51,5 +51,5 @@ func solution(answers []int) []int {
 		}
 	}
 
-	return Biggest([]int{persons[0].Count, persons[1].Count, persons[2].Count})
+	return biggest([]int{persons[0].Count, persons[1].Count, persons[2].Count})
 }

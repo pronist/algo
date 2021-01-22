@@ -13,7 +13,7 @@ func TestBiggest(t *testing.T) {
 		{[]int{2, 2, 2}, []int{1, 2, 3}},
 	}
 	for _, c := range cases {
-		biggest := Biggest(c.counts)
+		biggest := biggest(c.counts)
 		if len(biggest) != len(c.expect) {
 			t.Errorf("got %#v, want %#v", biggest, c.expect)
 			return
