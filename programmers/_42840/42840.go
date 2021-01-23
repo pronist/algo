@@ -6,20 +6,20 @@ import (
 	"math"
 )
 
-type P struct {
+type p struct {
 	pattern []int // 각 수포자의 패턴
 	i       int // 내부 이터레이터
-	Count   int // 문제를 맞춘 횟수
+	count   int // 문제를 맞춘 횟수
 }
 
-func (p *P) Resolve(answer int) {
+func (p *p) resolve(answer int) {
 	// 내부 이터레이터가 패턴의 마지막에 도달한 경우 리셋해야 한다.
 	if p.i >= len(p.pattern) {
 		p.i = 0
 	}
 	// 패턴과 문제의 답이 일치하는 경우 Count 를 증가시킨다.
 	if answer == p.pattern[p.i] {
-		p.Count++
+		p.count++
 	}
 	p.i++
 }
@@ -44,7 +44,7 @@ func biggest(counts []int) []int {
 }
 
 func solution(answers []int) []int {
-	persons := []*P{
+	persons := []*p{
 		{[]int{1,2,3,4,5}, 0, 0},
 		{[]int{2,1,2,3,2,4,2,5}, 0, 0},
 		{[]int{3,3,1,1,2,2,4,4,5,5}, 0, 0},
@@ -53,12 +53,12 @@ func solution(answers []int) []int {
 
 	for _, answer := range answers {
 		for _, p := range persons {
-			p.Resolve(answer)
+			p.resolve(answer)
 		}
 	}
 
 	for _, p := range persons {
-		counts = append(counts, p.Count)
+		counts = append(counts, p.count)
 	}
 
 	return biggest(counts)
