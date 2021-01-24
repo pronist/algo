@@ -8,7 +8,9 @@ import (
 
 func solution(array []int, commands [][]int) []int {
 	var result []int
+
 	for _, cmd := range commands {
+		// p := array[cmd[0]-1:cmd[1]] 인 경우 같은 내부 공규 메모리 사용으로 정렬시 문제 발생
 		p := append([]int{}, array[cmd[0]-1:cmd[1]]...)
 		sort.Ints(p)
 
