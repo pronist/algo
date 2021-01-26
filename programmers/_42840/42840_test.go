@@ -28,23 +28,23 @@ func TestBiggest(t *testing.T) {
 
 func TestP_Resolve(t *testing.T) {
 	cases := []struct {
-		P       P
+		p       p
 		answers []int
 		expect  int
 	}{
-		{P{[]int{1, 2, 3, 4, 5}, 0, 0}, []int{1, 2, 3, 4, 5}, 5},
-		{P{[]int{2, 1, 2, 3, 2, 4, 2, 5}, 0, 0}, []int{1, 2, 3, 4, 5}, 0},
-		{P{[]int{3, 3, 1, 1, 2, 2, 4, 4, 5, 5}, 0, 0}, []int{1, 2, 3, 4, 5}, 0},
-		{P{[]int{1, 2, 3, 4, 5}, 0, 0}, []int{1, 3, 2, 4, 2}, 2},
-		{P{[]int{2, 1, 2, 3, 2, 4, 2, 5}, 0, 0}, []int{1, 3, 2, 4, 2}, 2},
-		{P{[]int{3, 3, 1, 1, 2, 2, 4, 4, 5, 5}, 0, 0}, []int{1, 3, 2, 4, 2}, 2},
+		{p{[]int{1, 2, 3, 4, 5}, 0, 0}, []int{1, 2, 3, 4, 5}, 5},
+		{p{[]int{2, 1, 2, 3, 2, 4, 2, 5}, 0, 0}, []int{1, 2, 3, 4, 5}, 0},
+		{p{[]int{3, 3, 1, 1, 2, 2, 4, 4, 5, 5}, 0, 0}, []int{1, 2, 3, 4, 5}, 0},
+		{p{[]int{1, 2, 3, 4, 5}, 0, 0}, []int{1, 3, 2, 4, 2}, 2},
+		{p{[]int{2, 1, 2, 3, 2, 4, 2, 5}, 0, 0}, []int{1, 3, 2, 4, 2}, 2},
+		{p{[]int{3, 3, 1, 1, 2, 2, 4, 4, 5, 5}, 0, 0}, []int{1, 3, 2, 4, 2}, 2},
 	}
 	for _, c := range cases {
 		for _, answer := range c.answers {
-			c.P.Resolve(answer)
+			c.p.resolve(answer)
 		}
-		if c.P.Count != c.expect {
-			t.Errorf("got %#v, want %#v", c.P.Count, c.expect)
+		if c.p.count != c.expect {
+			t.Errorf("got %#v, want %#v", c.p.count, c.expect)
 		}
 	}
 }
