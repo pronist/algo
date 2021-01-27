@@ -12,5 +12,5 @@ func solution(s string) string {
 	if len(s)%2 != 0 {
 		return string(s[center])
 	}
-	return string(s[center-1 : center+1])
+	return s[center-1 : center+1]
 }
