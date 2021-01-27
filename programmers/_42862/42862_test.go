@@ -16,6 +16,7 @@ func TestRemove(t *testing.T) {
 		c.s = remove(c.s, c.i)
 		if len(c.s) != len(c.expect) {
 			t.Errorf("got %#v, want %#v", c.s, c.expect)
+			return
 		}
 		for i, v := range c.s {
 			if v != c.s[i] {

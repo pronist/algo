@@ -19,7 +19,6 @@ func TestSolution(t *testing.T) {
 		for i, v := range r {
 			if v != c.expect[i] {
 				t.Errorf("#%d, got %#v, want %#v", i, r, c.expect)
-				return
 			}
 		}
 	}

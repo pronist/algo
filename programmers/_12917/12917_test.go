@@ -13,7 +13,6 @@ func TestSolution(t *testing.T) {
 	for _, c := range cases {
 		if r := solution(c.s); r != c.expect {
 			t.Errorf("got %#v, want %#v", r, c.expect)
-			return
 		}
 	}
 }
