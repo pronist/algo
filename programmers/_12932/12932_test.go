@@ -3,12 +3,12 @@ package _12932
 import "testing"
 
 func TestSolution(t *testing.T) {
-	cases := []struct{
-		n int64
+	cases := []struct {
+		n      int64
 		expect []int
-	} {
-		{12345, []int{5,4,3,2,1}},
-		{123456, []int{6,5,4,3,2,1}},
+	}{
+		{12345, []int{5, 4, 3, 2, 1}},
+		{123456, []int{6, 5, 4, 3, 2, 1}},
 	}
 	for _, c := range cases {
 		r := solution(c.n)
