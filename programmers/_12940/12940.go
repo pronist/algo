@@ -7,7 +7,7 @@ import "math"
 func solution(n int, m int) []int {
 	a, b, gcd := n, m, 1
 
-	for i := 2; i < int(math.Min(float64(a), float64(b))); i++ {
+	for i := 2; i < int(math.Max(float64(a), float64(b))); i++ {
 		if a % i == 0 && b % i == 0 {
 			a, b, gcd, i = a/i, b/i, gcd*i, 1
 		}
