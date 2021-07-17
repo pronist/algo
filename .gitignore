@@ -1,1 +1,7 @@
 .idea
+.vscode
+.vs
+
+*.exe
+
+node_modules

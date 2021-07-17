@@ -1,0 +1,9 @@
+{
+  "name": "solidity-essentials",
+  "dependencies": {
+    "solc": "^0.4.21"
+  },
+  "devDependencies": {
+    "ethlint": "^1.2.5"
+  }
+}
